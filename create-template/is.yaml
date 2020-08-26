@@ -1,0 +1,72 @@
+apiVersion: v1
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-08-26T08:14:45Z"
+    generation: 1
+    labels:
+      app: quotesapi
+    name: quotesapi
+    namespace: stan-shih-quotes-dev
+    resourceVersion: "124356701"
+    selfLink: /apis/image.openshift.io/v1/namespaces/stan-shih-quotes-dev/imagestreams/quotesapi
+    uid: 339ef383-e774-11ea-9257-0a580a82000a
+  spec:
+    lookupPolicy:
+      local: false
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/stan-shih-quotes-dev/quotesapi
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp-na2.prod.nextcle.com/stan-shih-quotes-dev/quotesapi
+    tags:
+    - items:
+      - created: "2020-08-26T08:16:05Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/stan-shih-quotes-dev/quotesapi@sha256:3cfb8c0a1de40e357afefc7cc5a9c8fe0ce1ba3311b884527e470ccec96fc7ea
+        generation: 1
+        image: sha256:3cfb8c0a1de40e357afefc7cc5a9c8fe0ce1ba3311b884527e470ccec96fc7ea
+      tag: latest
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/image.dockerRepositoryCheck: "2020-08-26T08:13:52Z"
+    creationTimestamp: "2020-08-26T08:13:52Z"
+    generation: 2
+    name: quotesdb
+    namespace: stan-shih-quotes-dev
+    resourceVersion: "124355379"
+    selfLink: /apis/image.openshift.io/v1/namespaces/stan-shih-quotes-dev/imagestreams/quotesdb
+    uid: 1414c3ba-e774-11ea-9257-0a580a82000a
+  spec:
+    lookupPolicy:
+      local: false
+    tags:
+    - annotations: null
+      from:
+        kind: DockerImage
+        name: image-registry.openshift-image-registry.svc:5000/openshift/mysql:5.7
+      generation: 2
+      importPolicy: {}
+      name: "5.7"
+      referencePolicy:
+        type: Source
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/stan-shih-quotes-dev/quotesdb
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp-na2.prod.nextcle.com/stan-shih-quotes-dev/quotesdb
+    tags:
+    - conditions:
+      - generation: 2
+        lastTransitionTime: "2020-08-26T08:13:52Z"
+        message: 'Internal error occurred: Get https://image-registry.openshift-image-registry.svc:5000/v2/:
+          x509: certificate signed by unknown authority'
+        reason: InternalError
+        status: "False"
+        type: ImportSuccess
+      items: null
+      tag: "5.7"
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
